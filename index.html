@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>权威辅助 - 专业《迷你世界》辅助</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei",sans-serif;}
+body{background:#fff;color:#333;}
+header,section,footer{width:100%;}
+.header{height:80px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.1);position:fixed;top:0;z-index:100;}
+.container{width:1200px;max-width:95%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;}
+.logo-img{width:48px;height:48px;background:#07C160;border-radius:8px;margin-right:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;}
+.download-btn{background:#07C160;color:#fff;border:none;border-radius:20px;padding:10px 24px;font-size:16px;cursor:pointer;transition:.3s;}
+.download-btn:hover{background:#06A856;}
+.banner{margin-top:80px;padding:60px 20px;background:linear-gradient(135deg,#F5F7FA,#E4E8F0);text-align:center;}
+.banner-title{font-size:48px;font-weight:bold;margin-bottom:20px;}
+.banner-highlight{color:#07C160;}
+.banner-desc{font-size:18px;color:#666;margin-bottom:40px;line-height:1.6;}
+.features,.advantage{padding:80px 20px;}
+.features-title,.advantage-title{text-align:center;font-size:36px;font-weight:bold;margin-bottom:60px;}
+.features-container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;}
+.feature-card{flex:1 1 calc(33.33% - 20px);min-width:280px;background:#F5F7FA;border-radius:16px;padding:30px;transition:.3s;}
+.feature-card:hover{transform:translateY(-8px);box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+.feature-icon{width:64px;height:64px;background:#07C160;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;margin-bottom:15px;}
+.feature-title{font-size:22px;font-weight:bold;margin-bottom:10px;}
+.feature-desc{font-size:15px;color:#666;line-height:1.6;}
+.advantage{background:#F5F7FA;}
+.advantage-text{max-width:800px;margin:0 auto;text-align:left;}
+.advantage-list{list-style:none;}
+.advantage-item{display:flex;align-items:flex-start;margin-bottom:15px;}
+.advantage-check{color:#07C160;font-size:20px;margin-right:10px;}
+.advantage-desc{font-size:16px;color:#666;line-height:1.5;}
+.footer{height:100px;background:#333;color:#fff;display:flex;align-items:center;justify-content:center;}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:200;}
+.modal-content{background:#fff;border-radius:12px;padding:40px 30px;text-align:center;max-width:320px;width:90%;}
+.modal h3{font-size:22px;margin-bottom:20px;}
+.modal button{display:block;width:100%;margin:10px 0;padding:12px 0;border:none;border-radius:8px;font-size:16px;cursor:pointer;}
+.btn-cn,.btn-intl{background:#07C160;color:#fff;}
+.btn-cn:hover,.btn-intl:hover{background:#06A856;}
+.btn-close{background:#ccc;color:#333;}
+@media(max-width:768px){
+.banner-title{font-size:32px;}
+.features-title,.advantage-title{font-size:28px;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-img">权</div>
+      <div class="logo-text">权威辅助</div>
+    </div>
+  </div>
+</header>
+
+<section class="banner" id="home">
+  <h1 class="banner-title">权威辅助<br><span class="banner-highlight">《迷你世界》最强外挂</span></h1>
+  <p class="banner-desc">完全免费 · 功能实用 · 流畅简洁 · 永不跑路<br>为你的游戏体验保驾护航</p>
+  <button class="download-btn" id="openModal2">立即下载 v3.05.3</button>
+</section>
+
+<section class="features" id="features">
+  <h2 class="features-title">功能特点</h2>
+  <div class="features-container">
+    <div class="feature-card"><div class="feature-icon">免</div><h3 class="feature-title">完全免费</h3><p class="feature-desc">所有功能全部免费开放，无隐藏付费项目。</p></div>
+    <div class="feature-card"><div class="feature-icon">实</div><h3 class="feature-title">功能实用</h3><p class="feature-desc">涵盖人物加速、自动瞄准等实用功能。</p></div>
+    <div class="feature-card"><div class="feature-icon">流</div><h3 class="feature-title">流畅简洁</h3><p class="feature-desc">界面设计简洁直观，操作简单，不卡顿。</p></div>
+    <div class="feature-card"><div class="feature-icon">稳</div><h3 class="feature-title">永不跑路</h3><p class="feature-desc">团队持续维护更新，保障长期稳定。</p></div>
+    <div class="feature-card"><div class="feature-icon">安</div><h3 class="feature-title">安全无毒</h3><p class="feature-desc">多重检测，无病毒无插件，保护账号安全。</p></div>
+    <div class="feature-card"><div class="feature-icon">新</div><h3 class="feature-title">持续更新</h3><p class="feature-desc">新增功能，优化体验，满足更多需求。</p></div>
+  </div>
+</section>
+
+<section class="advantage" id="advantage">
+  <h2 class="advantage-title">核心优势</h2>
+  <div class="advantage-text">
+    <ul class="advantage-list">
+      <li class="advantage-item"><span class="advantage-check">✓</span><p class="advantage-desc"><strong>永久免费：</strong>所有功能终身免费使用。</p></li>
+      <li class="advantage-item"><span class="advantage-check">✓</span><p class="advantage-desc"><strong>功能全面：</strong>涵盖伪房主、人物加速、联机取物等。</p></li>
+      <li class="advantage-item"><span class="advantage-check">✓</span><p class="advantage-desc"><strong>极致流畅：</strong>优化底层架构，运行轻快不卡顿。</p></li>
+      <li class="advantage-item"><span class="advantage-check">✓</span><p class="advantage-desc"><strong>稳定可靠：</strong>专业团队7x24小时维护。</p></li>
+      <li class="advantage-item"><span class="advantage-check">✓</span><p class="advantage-desc"><strong>安全保障：</strong>不窃取信息，保护账号设备安全。</p></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="footer">©2025 权威辅助 | 保留所有权利</footer>
+
+<!-- 下载弹窗 -->
+<div class="modal" id="downloadModal">
+  <div class="modal-content">
+    <h3>请选择下载版本</h3>
+    <button class="btn-cn" id="btnCn">下载国服版本</button>
+    <button class="btn-intl" id="btnIntl">下载国际服版本</button>
+    <button class="btn-close" id="closeModal">关闭</button>
+  </div>
+</div>
+
+<script>
+const modal=document.getElementById('downloadModal');
+document.getElementById('openModal2').onclick=()=>modal.style.display='flex';
+document.getElementById('closeModal').onclick=()=>modal.style.display='none';
+window.onclick=e=>{if(e.target===modal)modal.style.display='none';}
+document.getElementById('btnCn').onclick=()=>{window.open('https://www.123912.com/s/avKyTd-GVYN','_blank');}
+document.getElementById('btnIntl').onclick=()=>{window.open('https://www.123912.com/s/avKyTd-PVYN','_blank');}
+</script>
+
+</body>
+</html>
