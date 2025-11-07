@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>权威辅助 - 专业《迷你世界》辅助</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;}
+body{background:#fff;color:#111;overflow-x:hidden;scroll-behavior:smooth;}
+header{position:fixed;top:0;width:100%;height:60px;backdrop-filter:blur(12px);background:rgba(255,255,255,0.75);display:flex;align-items:center;justify-content:center;z-index:100;border-bottom:1px solid rgba(0,0,0,0.05);}
+.nav{width:90%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-weight:600;font-size:20px;letter-spacing:1px;}
+.download-btn{background:#0071e3;color:#fff;border:none;border-radius:30px;padding:8px 22px;font-size:15px;cursor:pointer;transition:0.3s;}
+.download-btn:hover{background:#0077ed;}
+
+section{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 20px 60px;opacity:0;transform:translateY(60px);transition:all 1s cubic-bezier(.19,1,.22,1);}
+section.visible{opacity:1;transform:translateY(0);}
+.hero h1{font-size:60px;font-weight:700;margin-bottom:20px;line-height:1.2;}
+.hero span{color:#0071e3;}
+.hero p{font-size:18px;color:#555;line-height:1.7;margin-bottom:40px;}
+.hero .download-btn{font-size:17px;padding:14px 34px;border-radius:40px;}
+
+.parallax{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;transform:scale(1.1);opacity:0.2;}
+.section-dark{background:#000;color:#fff;}
+.section-dark .download-btn{background:#fff;color:#000;}
+.section-dark .download-btn:hover{background:#e5e5e5;}
+
+.features h2,.advantage h2{font-size:42px;font-weight:600;margin-bottom:60px;}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;width:90%;max-width:1100px;margin:0 auto;}
+.card{background:#fff;border-radius:24px;padding:40px 30px;box-shadow:0 6px 24px rgba(0,0,0,0.05);transition:all .4s ease;}
+.card:hover{transform:translateY(-8px);}
+.card h3{font-size:22px;font-weight:600;margin-bottom:10px;}
+.card p{color:#666;line-height:1.7;font-size:15px;}
+
+.advantage ul{list-style:none;max-width:700px;margin:0 auto;text-align:left;}
+.advantage li{font-size:18px;color:#444;margin-bottom:16px;display:flex;align-items:flex-start;}
+.advantage li span{color:#0071e3;font-weight:bold;margin-right:10px;}
+
+footer{background:#111;color:#aaa;text-align:center;padding:40px 0;font-size:14px;}
+
+/* 下载弹窗 */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);align-items:center;justify-content:center;z-index:200;}
+.modal-content{background:#fff;border-radius:16px;padding:40px 30px;text-align:center;max-width:320px;width:90%;animation:pop .3s ease;}
+.modal h3{font-size:22px;margin-bottom:20px;}
+.modal button{width:100%;margin:10px 0;padding:12px 0;border:none;border-radius:8px;font-size:16px;cursor:pointer;}
+.btn-cn,.btn-intl{background:#0071e3;color:#fff;}
+.btn-cn:hover,.btn-intl:hover{background:#0077ed;}
+.btn-close{background:#ccc;color:#333;}
+@keyframes pop{from{transform:scale(0.9);opacity:0;}to{transform:scale(1);opacity:1);}
+
+/* 视差效果 */
+.parallax-bg{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;z-index:-1;transform:scale(1.2) translateY(0);transition:transform 1s ease-out;}
+
+/* 响应式 */
+@media(max-width:768px){
+.hero h1{font-size:38px;}
+.features h2,.advantage h2{font-size:28px;}
+.card{padding:28px 20px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">权威辅助</div>
+    <button class="download-btn" id="openModalTop">立即下载</button>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero section">
+  <div class="parallax-bg" style="background-image:url('https://www.apple.com/v/home/at/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_large_2x.jpg');"></div>
+  <h1>权威辅助<br><span>《迷你世界》最强外挂</span></h1>
+  <p>完全免费 · 功能实用 · 流畅简洁 · 永不跑路<br>为你的游戏体验保驾护航</p>
+  <button class="download-btn" id="openModalHero">立即下载 v3.05.3</button>
+</section>
+
+<!-- 第二屏 功能 -->
+<section class="section features section-dark">
+  <div class="parallax-bg" style="background-image:url('https://www.apple.com/v/home/at/images/heroes/macbook-air/hero_macbookair__f3p6x8x8b7me_large_2x.jpg');opacity:0.25;"></div>
+  <h2>功能特点</h2>
+  <div class="feature-grid">
+    <div class="card"><h3>完全免费</h3><p>所有功能全部免费开放，无隐藏付费项目。</p></div>
+    <div class="card"><h3>功能实用</h3><p>涵盖人物加速、自动瞄准等实用功能。</p></div>
+    <div class="card"><h3>流畅简洁</h3><p>界面设计简洁直观，操作简单不卡顿。</p></div>
+    <div class="card"><h3>永不跑路</h3><p>持续维护更新，保障长期稳定。</p></div>
+    <div class="card"><h3>安全无毒</h3><p>多重检测，无病毒无插件，保护账号安全。</p></div>
+    <div class="card"><h3>持续更新</h3><p>新增功能，优化体验，满足更多需求。</p></div>
+  </div>
+</section>
+
+<!-- 第三屏 优势 -->
+<section class="section advantage">
+  <div class="parallax-bg" style="background-image:url('https://www.apple.com/v/home/at/images/heroes/apple-watch-series-9/hero_apple_watch_series_9__x5wo4ptz3k2u_large_2x.jpg');opacity:0.2;"></div>
+  <h2>核心优势</h2>
+  <ul>
+    <li><span>✓</span><strong>永久免费：</strong> 所有功能终身免费使用。</li>
+    <li><span>✓</span><strong>功能全面：</strong> 涵盖伪房主、人物加速、联机取物等。</li>
+    <li><span>✓</span><strong>极致流畅：</strong> 优化底层架构，运行轻快不卡顿。</li>
+    <li><span>✓</span><strong>稳定可靠：</strong> 专业团队7x24小时维护。</li>
+    <li><span>✓</span><strong>安全保障：</strong> 不窃取信息，保护账号设备安全。</li>
+  </ul>
+</section>
+
+<footer>©2025 权威辅助 | 保留所有权利</footer>
+
+<!-- 下载弹窗 -->
+<div class="modal" id="downloadModal">
+  <div class="modal-content">
+    <h3>请选择下载版本</h3>
+    <button class="btn-cn" id="btnCn">下载国服版本</button>
+    <button class="btn-intl" id="btnIntl">下载国际服版本</button>
+    <button class="btn-close" id="closeModal">关闭</button>
+  </div>
+</div>
+
+<script>
+// 弹窗控制
+const modal=document.getElementById('downloadModal');
+document.getElementById('openModalHero').onclick=()=>modal.style.display='flex';
+document.getElementById('openModalTop').onclick=()=>modal.style.display='flex';
+document.getElementById('closeModal').onclick=()=>modal.style.display='none';
+window.onclick=e=>{if(e.target===modal)modal.style.display='none';}
+document.getElementById('btnCn').onclick=()=>{window.open('https://www.123912.com/s/avKyTd-GVYN','_blank');}
+document.getElementById('btnIntl').onclick=()=>{window.open('https://www.123912.com/s/avKyTd-PVYN','_blank');}
+
+// 淡入与视差动画
+const sections=document.querySelectorAll('section');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible');}
+  });
+},{threshold:0.2});
+sections.forEach(sec=>observer.observe(sec));
+
+// 视差背景滚动
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.parallax-bg').forEach(bg=>{
+    let offset=window.pageYOffset;
+    bg.style.transform=`scale(1.2) translateY(${offset*0.2}px)`;
+  });
+});
+</script>
+
+</body>
+</html>
